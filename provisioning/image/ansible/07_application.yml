@@ -7,32 +7,32 @@
     - name: bundle install
       shell: cd /home/isucon/private_isu/webapp/ruby; bash -lc "bundle install"
 
-- hosts: guests:extras
-#- hosts: extras
-  become: yes
-  become_user: isucon
-  gather_facts: no
-  tasks:
-    - name: go build
-      shell: cd /home/isucon/private_isu/webapp/golang; bash -lc "./setup.sh"
+# - hosts: guests:extras
+# - hosts: extras
+#   become: yes
+#   become_user: isucon
+#   gather_facts: no
+#   tasks:
+#     - name: go build
+#       shell: cd /home/isucon/private_isu/webapp/golang; bash -lc "./setup.sh"
 
-- hosts: guests:extras
-  become: yes
-  become_user: isucon
-  gather_facts: no
-  tasks:
-    - name: download composer.phar
-      get_url: url=http://getcomposer.org/composer.phar dest=/home/isucon/private_isu/webapp/php/composer.phar force=1 mode=755
-    - name: composer install
-      shell: cd /home/isucon/private_isu/webapp/php; bash -lc "./composer.phar install"
+#  hosts: guests:extras
+#   become: yes
+#   become_user: isucon
+#   gather_facts: no
+#   tasks:
+#     - name: download composer.phar
+#       get_url: url=http://getcomposer.org/composer.phar dest=/home/isucon/private_isu/webapp/php/composer.phar force=1 mode=755
+#     - name: composer install
+#       shell: cd /home/isucon/private_isu/webapp/php; bash -lc "./composer.phar install"
 
-- hosts: guests:extras
-  become: yes
-  become_user: isucon
-  gather_facts: no
-  tasks:
-    - name: npm install
-      shell: cd /home/isucon/private_isu/webapp/node; bash -lc "npm install"
+#  hosts: guests:extras
+#   become: yes
+#   become_user: isucon
+#   gather_facts: no
+#   tasks:
+#     - name: npm install
+#       shell: cd /home/isucon/private_isu/webapp/node; bash -lc "npm install"
 
 - hosts: guests:extras
   become: yes
